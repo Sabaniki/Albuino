@@ -4,109 +4,61 @@ parser grammar AlbuinoParser;
 }
 options {tokenVocab = AlbuinoLexer;}
 
+program
+    : statement (NL* statement)*
+    ;
+statement
+    : propertyDeclaration
+    ;
 propertyDeclaration
-    : (VAL | VAR)
-    (NL* (variableDeclaration))
-    (NL* (BY | ASSIGNMENT) NL* expression)
+    : (VAL | VAR) (Identifier) (COLON) (Identifier) (NL* (ASSIGNMENT) NL* expression)
     ;
 
 expression
-    :
+    : expression operator expression
+    | LPAREN expression RPAREN
+    | IntegerLiteral
+    | stringLiteral
+    | Identifier
     ;
 
-additiveExpression
-    : multiplicativeExpression (additiveOperator NL* multiplicativeExpression)*
+stringLiteral
+    : lineStringLiteral
+    | multiLineStringLiteral
     ;
 
-multiplicativeExpression
-    : typeRHS (multiplicativeOperation NL* typeRHS)*
-    ;
-typeRHS
-    : prefixUnaryExpression (NL* typeOperation prefixUnaryExpression)*
+lineStringLiteral
+    : QUOTE_OPEN (lineStringContent | lineStringExpression)* QUOTE_CLOSE
     ;
 
-prefixUnaryExpression
-    : prefixUnaryOperation* postfixUnaryExpression
+multiLineStringLiteral
+    : TRIPLE_QUOTE_OPEN (multiLineStringContent | multiLineStringExpression | lineStringLiteral | MultiLineStringQuote)* TRIPLE_QUOTE_CLOSE
     ;
 
-postfixUnaryExpression
-    : (atomicExpression | callableReference) postfixUnaryOperation*
+lineStringContent
+    : LineStrText
+    | LineStrEscapedChar
+    | LineStrRef
     ;
 
-additiveOperator
-    : ADD | SUB
+lineStringExpression
+    : LineStrExprStart expression RCURL
     ;
 
-multiplicativeOperation
+multiLineStringContent
+    : MultiLineStrText
+    | MultiLineStrEscapedChar
+    | MultiLineStrRef
+    ;
+
+multiLineStringExpression
+    : MultiLineStrExprStart expression RCURL
+    ;
+
+operator
     : MULT
-    | DIV
     | MOD
-    ;
-
-typeOperation
-    : AS
-    | AS_SAFE
-    | COLON
-    ;
-
-variableDeclaration: simpleIdentifier COLON type;
-
-type
-    : typeReference
-    ;
-
-typeReference
-    : LPAREN typeReference RPAREN
-    | userType
-    ;
-
-userType
-    : simpleUserType (NL* DOT NL* simpleUserType)*
-    ;
-
-simpleUserType
-    : simpleIdentifier
-    ;
-
-simpleIdentifier
-    : Identifier
-    //soft keywords:
-    | ABSTRACT
-    | ANNOTATION
-    | BY
-    | CATCH
-    | COMPANION
-    | CONSTRUCTOR
-    | CROSSINLINE
-    | DATA
-    | DYNAMIC
-    | ENUM
-    | EXTERNAL
-    | FINAL
-    | FINALLY
-    | GETTER
-    | IMPORT
-    | INFIX
-    | INIT
-    | INLINE
-    | INNER
-    | INTERNAL
-    | LATEINIT
-    | NOINLINE
-    | OPEN
-    | OPERATOR
-    | OUT
-    | OVERRIDE
-    | PRIVATE
-    | PROTECTED
-    | PUBLIC
-    | REIFIED
-    | SEALED
-    | TAILREC
-    | SETTER
-    | VARARG
-    | WHERE
-    //strong keywords
-    | CONST
-    | SUSPEND
+    | DIV
+    | ADD
+    | SUB
     ;
