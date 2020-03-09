@@ -2,9 +2,9 @@ lexer grammar AlbuinoLexer;
 
 import UnicodeClasses;
 
-@header{
-    package saba.albuino.listener.systax;
-}
+//@header{
+//    package saba.albuino.syntax;
+//}
 
 ShebangLine
     : '#!' ~[\u000A\u000D]*

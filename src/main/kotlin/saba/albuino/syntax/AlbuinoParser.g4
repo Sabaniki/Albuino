@@ -1,7 +1,7 @@
 parser grammar AlbuinoParser;
-@header{
-    package saba.albuino.listener.systax;
-}
+//@header{
+//    package saba.albuino.syntax;
+//}
 options {tokenVocab = AlbuinoLexer;}
 
 program

@@ -1,7 +1,7 @@
 lexer grammar UnicodeClasses;
-@header{
-    package saba.albuino.listener.systax;
-}
+//@header{
+//    package saba.albuino.syntax;
+//}
 UNICODE_CLASS_LL:
 	'\u0061'..'\u007A' |
 	'\u00B5' |

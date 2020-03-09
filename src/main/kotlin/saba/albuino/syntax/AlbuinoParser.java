@@ -1,7 +1,5 @@
 // Generated from /Users/sabac/MyPrograms/source/Kotlin/Albuino/src/main/kotlin/saba/albuino/syntax/AlbuinoParser.g4 by ANTLR 4.8
-
-    package saba.albuino.listener.systax;
-
+package saba.albuino.syntax;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;

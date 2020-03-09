@@ -1,10 +1,5 @@
 // Generated from /Users/sabac/MyPrograms/source/Kotlin/Albuino/src/main/kotlin/saba/albuino/syntax/AlbuinoLexer.g4 by ANTLR 4.8
-
-    package saba.albuino.listener.systax;
-
-
-    package saba.albuino.listener.systax;
-
+package saba.albuino.syntax;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;

@@ -6,30 +6,30 @@
         <PerGrammarGenerationSettings>
           <option name="fileName" value="$PROJECT_DIR$/src/main/kotlin/saba/albuino/syntax/AlbuinoLexer.g4" />
           <option name="autoGen" value="true" />
-          <option name="outputDir" value="$PROJECT_DIR$/src/main/kotlin/saba/albuino/syntax" />
+          <option name="outputDir" value="$PROJECT_DIR$/src/main/kotlin" />
           <option name="libDir" value="" />
           <option name="encoding" value="" />
-          <option name="pkg" value="" />
+          <option name="pkg" value="saba.albuino.syntax" />
           <option name="language" value="" />
           <option name="generateVisitor" value="true" />
         </PerGrammarGenerationSettings>
         <PerGrammarGenerationSettings>
           <option name="fileName" value="$PROJECT_DIR$/src/main/kotlin/saba/albuino/syntax/UnicodeClasses.g4" />
           <option name="autoGen" value="true" />
-          <option name="outputDir" value="$PROJECT_DIR$/src/main/kotlin/saba/albuino/syntax" />
+          <option name="outputDir" value="$PROJECT_DIR$/src/main/kotlin" />
           <option name="libDir" value="" />
           <option name="encoding" value="" />
-          <option name="pkg" value="" />
+          <option name="pkg" value="saba.albuino.syntax" />
           <option name="language" value="" />
           <option name="generateVisitor" value="true" />
         </PerGrammarGenerationSettings>
         <PerGrammarGenerationSettings>
           <option name="fileName" value="$PROJECT_DIR$/src/main/kotlin/saba/albuino/syntax/AlbuinoParser.g4" />
           <option name="autoGen" value="true" />
-          <option name="outputDir" value="$PROJECT_DIR$/src/main/kotlin/saba/albuino/syntax" />
+          <option name="outputDir" value="$PROJECT_DIR$/src/main/kotlin" />
           <option name="libDir" value="" />
           <option name="encoding" value="" />
-          <option name="pkg" value="" />
+          <option name="pkg" value="saba.albuino.syntax" />
           <option name="language" value="" />
           <option name="generateVisitor" value="true" />
         </PerGrammarGenerationSettings>
