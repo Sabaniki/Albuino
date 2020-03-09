@@ -2,6 +2,10 @@ lexer grammar AlbuinoLexer;
 
 import UnicodeClasses;
 
+@header{
+    package saba.albuino.listener.systax;
+}
+
 ShebangLine
     : '#!' ~[\u000A\u000D]*
       -> channel(HIDDEN)
